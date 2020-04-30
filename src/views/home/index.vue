@@ -2,7 +2,7 @@
   <div class="container">
     <el-button @click="handleClick">打开可拖动组件</el-button>
     <div ref="iframeContent" class="iframe-content">
-      <iframe id="iframe" ref="iframe" src="https://www.baidu.com/" width="100%" />
+      <iframe id="iframe" ref="iframe" src="https://www.baidu.com/" />
     </div>
     <el-dialog
       v-el-drag-dialog
@@ -28,7 +28,7 @@ export default {
   },
   directives: { elDragDialog },
   mounted () {
-    this.setSize()
+    // this.setSize()
   },
   methods: {
     handleClick () {
@@ -49,6 +49,10 @@ export default {
   width: 100%;
   height: 100vh;
   background-color: rgba(#000, .5);
+  iframe {
+    width: 100%;
+    height: calc(100vh - 60px);
+  }
   // .iframe-content {
   //   width: 100%;
   //   height: calc(100vh - 20px);
